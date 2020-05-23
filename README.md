@@ -4,9 +4,11 @@
 ## Usage
 
 ```sh
-git clone git@github.com:jackhftang/my_nim_github_template.git <new project folder>
-cd <new project folder>
-nimble rename <package name>
+PACKAGE_NAME="new_package_name_here"
+FOLDER_NAME=$PACKAGE_NAME.nim
+git clone git@github.com:jackhftang/my_nim_github_template.git $FOLDER_NAME
+cd $FOLDER_NAME
+nimble rename $PACKAGE_NAME
 rm -rf .git
 git init .
 git add --all
