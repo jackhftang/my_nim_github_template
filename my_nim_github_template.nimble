@@ -29,10 +29,28 @@ task version, "update version":
   # last params as version
   let ver = paramStr( paramCount() )
   if ver == "version": 
+    # print current version
     echo version
   else:
     withDir thisDir(): 
       updateNimbleVersion(ver)
+
+proc renamePackage(fname, tname: string) =
+  let nimbleFile = tname & ".nimble"
+  mvFile("src/" & fname & ".nim", "src/" & tname & ".nim")
+  mvFile(fname & ".nimble", nimbleFile)
+  let t1 = readFile(nimbleFile)
+  let t2 = t1.replace("my_nim_github_template", tname)
+  writeFile(nimbleFile, t2)
+
+task rename, "rename package":
+  let pname = paramStr( paramCount() )
+  if pname == "rename":
+    echo "no package name provided"
+    quit 1
+  else:
+    withDir thisDir():
+      renamePackage("my_nim_github_template", pname)
 
 task docgen, "generate docs":
   exec "nim doc --out:docs/index.html --project src/my_nim_github_template.nim"

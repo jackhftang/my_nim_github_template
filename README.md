@@ -9,6 +9,8 @@ cd <new project folder>
 nimble rename <package name>
 rm -rf .git
 git init .
+git add --all
+git commit -a -m "start from template"
 ```
 
 ## Feature 
