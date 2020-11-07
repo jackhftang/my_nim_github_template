@@ -52,7 +52,7 @@ task rename, "rename package":
     withDir thisDir():
       renamePackage("my_nim_github_template", pname)
 
-task docgen, "generate docs":
+task gendoc, "generate docs":
   exec "nim doc --out:docs/index.html --project src/my_nim_github_template.nim"
 
 task release_patch, "release with patch increment":
