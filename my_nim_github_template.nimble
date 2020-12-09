@@ -11,10 +11,10 @@ bin           = @[]
 
 # Dependencies
 
-requires "nim >= 1.2.0"
+requires "nim >= 1.4.2"
 
 proc updateNimbleVersion(ver: string) =
-  let fname = "my_nim_github_template.nimble"
+  let fname = currentSourcePath()
   let txt = readFile(fname)
   var lines = txt.split("\n")
   for i, line in lines:
