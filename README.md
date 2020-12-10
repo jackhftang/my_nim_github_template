@@ -19,7 +19,7 @@ git commit -a -m "start from template"
 
 - travis integration
 - [release-it](https://github.com/release-it/release-it) integration
-- recursively include files under /src with suffer `_test.nim` to test
+- recursively include files under /src with suffix `_test.nim` to test
 
 ## Tasks 
 
