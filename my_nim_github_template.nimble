@@ -53,7 +53,7 @@ task rename, "rename package":
       renamePackage("my_nim_github_template", pname)
 
 task gendoc, "generate docs":
-  exec "nim doc --out:docs/index.html --project src/my_nim_github_template.nim"
+  exec "nim doc --out:docs --project src/my_nim_github_template.nim"
 
 task release_patch, "release with patch increment":
   exec "release-it --ci -i patch"
